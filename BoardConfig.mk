@@ -45,9 +45,6 @@ ifeq ($(HOST_OS),linux)
   TARGET_USE_SDCLANG := true
   ifeq ($(TARGET_USE_SDCLANG),true)
     SDCLANG := true
-    SDCLANG_PATH := prebuilts/clang/linux-x86/host/sdclang-3.8/bin
-    SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
-    SDCLANG_COMMON_FLAGS := -O3 -fvectorize-loops
   endif
 endif
 
@@ -64,6 +61,10 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8916
 TARGET_KERNEL_CONFIG := lineage_ido_defconfig
+ifeq ($(HOST_OS),linux)
+  TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-opt-linux-android-
+  KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-7.x/bin
+endif
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
