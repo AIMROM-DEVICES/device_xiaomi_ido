@@ -1,0 +1,25 @@
+[
+ {
+   "repository": "KudProject/kernel_xiaomi_msm8916",
+   "target_path": "kernel/xiaomi/msm8916",
+   "remote": "github",
+   "revision": "oreo-mr1"
+ },
+ {
+   "repository": "KudProject/proprietary_vendor_xiaomi",
+   "target_path": "vendor/xiaomi",
+   "remote": "github",
+   "revision": "oreo-mr1"
+ },
+ {
+   "repository": "android_external_sony_boringssl-compat",
+   "target_path": "external/sony/boringssl-compat",
+   "remote": "los"
+ },
+ {
+   "repository": "krasCGQ/aarch64-linux-android",
+   "target_path": "prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-7.x",
+   "remote": "github",
+   "revision": "opt-gnu-7.x"
+ }
+]
